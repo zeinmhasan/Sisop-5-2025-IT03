@@ -1,11 +1,12 @@
-# Sisop-5-2025-IT-Template
+# Sisop-5-2025
 
-## Kelompok
+## KelompokIT03
 
 Nama | NRP
 --- | ---
-Amoes Noland | 5027231028
-Rafi' Afnaan Fathurrahman | 5027231040
+Zein Muhammad hasan | 5027241035
+Afriza Tristan Calendra Rajasa |5027241104
+Jofanka Al-kautsar Pangestu Abady | 5027241107
 
 ## Daftar Isi
 
