@@ -180,8 +180,6 @@ https://github.com/user-attachments/assets/1cfa66b1-b2f5-4e3e-a4b2-ec8b012f6fbb
 
 ## Laporan
 
-# Laporran Resume Modul 5 Sistem Operasi
-
 Pada modul ini, praktikan diminta untuk membuat sebuah Operating System sederhana yang bernama EorzeOS. Untuk struktur filenya seperti ini
 ```
 |_ include\n
@@ -203,7 +201,7 @@ Pada modul ini, praktikan diminta untuk membuat sebuah Operating System sederhan
 
 Dimana, setiap file memiliki peran yang sangat penting dalam operating system ini.
 
-## `kernel.h`
+### `kernel.h`
 File ini berfungsi sebagai antarmuka untuk fungsionalitas inti kernel, mendeklarasikan fungsi-fungsi yang berhubungan langsung dengan interaksi hardware dan operasi I/O dasar seperti menampilkan string, membaca input, dan mengelola layar. Untuk kodenya seperti ini.
 
 ```
@@ -225,7 +223,7 @@ void clearScreen(int color);
 #endif // __KERNEL_H__
 ```
 
-## `shell.h`
+### `shell.h`
 File ini digunakan untuk mendeklarasikan semua fungsi yang membentuk shell antarmuka pengguna, termasuk fungsi utama shell, penguraian perintah, eksekusi perintah, serta fungsi terkait prompt dan respons. Untuk kodenya seperti ini.
 
 ```
@@ -246,7 +244,7 @@ void randomAnswer();
 
 Dimana deklarasi fungsi ditulis di file ini.
 
-## `std_lib.h`
+### `std_lib.h`
 File header ini berfungsi untuk menyediakan deklarasi untuk berbagai fungsi utility standar, mencakup operasi aritmatika, manipulasi string, serta fungsi konversi antara string dan integer, yang dapat digunakan oleh bagian lain dari sistem. Untuk kodenya seperti ini.
 
 ```
@@ -272,7 +270,7 @@ void itoa(int num, char *str);
 
 ```
 
-## `std_type.h`
+### `std_type.h`
 
 File ini bertujuan untuk mendefinisikan tipe data dasar (byte, bool) dan konstanta boolean (true, false) yang akan digunakan secara konsisten di seluruh proyek sistem operasi. Untuk kodenya seperti ini.
 
@@ -290,7 +288,7 @@ typedef char bool;
 
 ```
 
-## `bootloader.asm`
+### `bootloader.asm`
 Bootloader ini digunakan untuk menjalankan fungsi assembly ke dalam OS. Assembly menggunakan 16-bit, sehingga program tidak dapat menggaunakan / dan % untuk perhitungannya. Untuk kodenya seperti ini
 
 ```
@@ -337,7 +335,7 @@ bootloader:
   dw 0xAA55
 ```
 
-## `kernel.asm`
+### `kernel.asm`
 
 Fungsi dari kernel.asm adalah sebagai modul assembly yang mengatur konfigurasi awal kernel, serta mengelola switching CPU ke protected mode dan menginisialisasi interrupt handlers sebelum menyerahkan kontrol ke kode kernel dalam bahasa C. Untuk kodenya seperti ini
 
@@ -406,7 +404,7 @@ _bios_set_cursor:
 ```
 
 
-## `kernel.c`
+### `kernel.c`
 File ini digunakan untuk mengimplementasikan logika utama kernel yang meliputi manajemen hardware dasar (seperti input keyboard dan output layar), pengaturan sistem interrupt, manajemen memori sederhana, serta memulai shell sebagai interface interaktif pengguna. Untuk kodenya seperti ini
 
 ```
@@ -500,7 +498,7 @@ Dimana cara kerjanya seperti ini.
 - Fungsi clearScreen mengisi seluruh memori video dengan spasi dan warna yang ditentukan, lalu mengatur ulang kursor ke posisi awal.
 - Fungsi main adalah titik masuk program yang pertama kali membersihkan layar, mencetak pesan sambutan, dan kemudian memanggil fungsi shell().
 
-## `shell.c`
+### `shell.c`
 Fungsi dari kode ini adalah untuk menyediakan command line interface berbasis teks yang memungkinkan pengguna untuk memasukkan perintah, memproses input tersebut, menjalankan perintah built-in seperti kalkulator, clear screen, dan pengaturan warna terminal, serta memberikan umpan balik interaktif sesuai dengan state shell dan pengguna. Untuk kodenya seperti ini
 
 ```
@@ -675,7 +673,7 @@ Dimana cara kerjanya seperti ini
 - Perintah meliputi operasi seperti mengubah nama pengguna, mengganti tema layar, dan melakukan perhitungan matematika.
 - Shell beroperasi dalam loop tak terbatas, terus-menerus membaca, mengurai, dan mengeksekusi perintah.
 
-## std_lib.c
+### std_lib.c
 File ini berfungsi untuk menyediakan implementasi fungsi utilitas dasar seperti manipulasi string (strlen, strcpy, strcmp), operasi memori (memset, memcpy), dan fungsi konversi data (atoi), yang diperlukan karena kernel tidak dapat menggunakan pustaka standar C. Untuk kodenya seperti ini
 
 ```
@@ -811,7 +809,7 @@ Dimana cara kerjanya sebagai berikut.
 - Pada itoa dan atoi, kedua kodenya dapat ditulis sebagaimana dalam bahasa c biasa dengan menggunakan array.
 - Beberapa fungsi lainnya seperti strcmp, strcpy dan clear dideklarasikan di sini.
 
-## bochsrc.txt
+### bochsrc.txt
 File ini digunakan untuk eksekusi sistem operasi sederhana. FIle ini dijalankan setelah seluruh kode telah dicompile dengan `make`. Untuk kodenya seperti ini
 ```
 #=======================================================================
@@ -854,7 +852,7 @@ info: action=report
 debug: action=ignore
 ```
 
-## `makefile`
+### `makefile`
 Makefile bertujuan agar proses compile dapat berjalan hanya dengan sekali command. Cara kerja dari file ini adalah dengan menjalankan beberapa proses sekaligus setiap line yang ada di dalamnya. Untuk kodenya seperti ini.
 
 ```
@@ -923,7 +921,7 @@ clean:
 
 Dimana untuk meng-compilenya cukup dengan command `make`, jika ingin dijalankan di bochs maka dapat menggunakan `make run`. Jika ingin membersihkan file setelah digunakan, diperlukan `make clean`.
 
-## Revisi
+### Revisi
 Revisi pada file dilakukan pada isi `bochsrc.txt`. Untuk kode sebelum seperti ini
 
 ```
