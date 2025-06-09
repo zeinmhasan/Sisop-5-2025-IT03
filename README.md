@@ -933,7 +933,7 @@ floppya: 1_44="\\wsl.localhost\Ubuntu\home\hasro71\pr5\bin\floppy.img", status=i
 menjadi seperti ini
 
 ```
-floppya: 1_44="bin\floppy.img", status=inserted
+floppya: 1_44="bin/floppy.img", status=inserted
 ```
 
 
